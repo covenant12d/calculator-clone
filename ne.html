@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* Style the text with initial settings */
+        .underline-text {
+            display: inline-block;
+            position: relative;
+            padding-bottom: 5px; /* Adjust as needed */
+            cursor: pointer;
+        }
+
+        /* Add a pseudo-element for the underline */
+        .underline-text::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 2px; /* Height of the underline */
+            background-color: #3498db; /* Color of the underline */
+            transform: scaleX(0); /* Initially set the width to 0 */
+            transform-origin: bottom right;
+            transition: transform 0.3s ease; /* Add a smooth transition */
+        }
+
+        /* Change the width of the underline on hover */
+        .underline-text:hover::after {
+            transform: scaleX(1);
+            transform-origin: bottom left;
+        }
+
+        /* Change the width of the underline on click */
+        .underline-text:active::after {
+            transform: scaleX(1);
+            transform-origin: bottom left;
+        }
+    </style>
+</head>
+<body>
+    <div class="underline-text">Hover or Click me</div>
+</body>
+</html>
